@@ -1,0 +1,18 @@
+.modal-body {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-body > * {
+	margin: 7px;
+}
+
+#button-agri {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.modal-large > .modal-content {
+	width: 1060px;
+	margin-left: -250px;
+}

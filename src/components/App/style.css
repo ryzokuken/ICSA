@@ -1,11 +1,18 @@
-#app-root {
-  margin-top: 50px;
+.modal-body {
+	display: flex;
+	flex-direction: column;
 }
 
-#buttons > a {
-  margin: 5px;
+.modal-body > * {
+	margin: 7px;
 }
 
-#buttons {
-  border: 1px solid red;
+#button-agri {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.modal-large > .modal-content {
+	width: 1060px;
+	margin-left: -250px;
 }

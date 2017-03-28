@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/index';
+import { browserHistory } from 'react-router';
+
+import Routes from './routes';
 
 import 'bootswatch/readable/bootstrap.css';
 // import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -9,6 +11,6 @@ import 'bootswatch/readable/bootstrap.css';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <Routes history={browserHistory} />,
   document.getElementById('root')
 );

@@ -9,10 +9,6 @@ app = Flask(__name__)
 app.secret_key = 'yofuckingpeople$'
 cors = CORS(app, resources={r"/foo": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
-@app.route('/message_parser')
-def message_parser():
-    command = request.args['query']
-    return message_chunk(command)
 
 @app.route('/newsfeed')
 @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])

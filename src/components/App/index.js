@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Jumbotron, Button, Row, Col, Panel, Modal } from 'react-bootstrap';
 import { Link } from 'react-router';
+import $ from 'jquery';
 
 import data from './world-bank.png';
 
@@ -9,7 +10,7 @@ import './style.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { showModal: false, showModal2: false, showModal3: false };
+    this.state = { showModal: false, showModal2: false, showModal3: false, data: {} };
   }
 
   close() {
@@ -36,6 +37,22 @@ class App extends Component {
     this.setState({ showModal3: true });
   }
 
+  componentDidMount() {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "headers": [
+        "Access-Control-Allow-Origin": "*"
+      ],
+      "url": "http://localhost:5000/newsfeed",
+      "method": "GET"
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  }
+
   render() {
     return (
       <div>
@@ -46,6 +63,7 @@ class App extends Component {
         </Jumbotron>
         <Grid>
           <Row className="show-grid">
+
             <Col xs={6} md={3}>
               <Panel header={<h3>Your Pincode</h3>} bsStyle="success">
                 <h3>110045</h3>
@@ -56,13 +74,11 @@ class App extends Component {
                 World Bank Statistics
               </Button>
             </Col>
+
             <Col xs={6} md={6}>
-              {[1, 2, 3, 4, 5].map((data) => (
-                <Panel header={<h3>sample title</h3>} bsStyle="success">
-                  sample content
-                </Panel>
-              ))}
+              { JSON.stringify(this.state.data) }
             </Col>
+
             <Col xsHidden md={3}>
               <Button
                 bsStyle="success"
@@ -86,6 +102,7 @@ class App extends Component {
                 File a consumer complaint
               </Button>
             </Col>
+
           </Row>
         </Grid>
 

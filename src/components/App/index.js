@@ -80,8 +80,8 @@ class App extends Component {
               { this.state.data.cards && this.state.data.cards.map((item) => (
                 <Panel
                   header={<h3>{item.Ministry} - {item.Title}</h3>}
-                  bsStyle="primary"
-                  footer={<Button bsStyle="primary" href={item.url} target="_blank">Read More</Button>}>
+                  bsStyle="success"
+                  footer={<Button bsStyle="success" href={item.url} target="_blank">Read More</Button>}>
                   {item.Subject}
                 </Panel>
               )) }

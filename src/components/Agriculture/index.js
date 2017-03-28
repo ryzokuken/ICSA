@@ -31,15 +31,6 @@ class App extends Component {
       <Grid>
          <Row className="show-grid">
           <Col md={6}>
-<<<<<<< HEAD
-            <Panel header={<h3>Weather Information</h3>} bsStyle="success">
-              Panel content
-            </Panel>
-          </Col>
-          <Col md={6}>
-            <Panel header={<h3>Livestock</h3>} bsStyle="success">
-              Panel content
-=======
             <Panel header={<h3>Weather Information</h3>} bsStyle="primary">
               {this.state.weather.weather && this.state.weather.weather.map((w) => (
                 <div>
@@ -78,7 +69,6 @@ class App extends Component {
                 ))}
               </tbody>
               </table>
->>>>>>> Ujjwal
             </Panel>
           </Col>
         </Row>

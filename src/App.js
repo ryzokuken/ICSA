@@ -17,7 +17,7 @@ class App extends Component {
         </Navbar>
         <Jumbotron>
           <Grid>
-            <h1>Welcome to React</h1>
+            <center><h1>Sahayak</h1></center>
             <p>
               <Button
                 bsStyle="success"

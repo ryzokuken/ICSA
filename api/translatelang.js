@@ -2,8 +2,9 @@ const translate = require('google-translate-api');
 const request = require('request');
 const wiki = require('./wiki').wikiService
 const pincode = require('./pincode').getPincode
-const getWeather = require('./weather').getWeather
+//const getWeather = require('./weather').getWeather
 //log s result from wiki api
+const upload = require('./upload').upload
 const logResult = (message) => {
   console.log(message);
 }
@@ -16,7 +17,7 @@ const parseText = (rawText) => {
         method: 'GET'
       }, (error, response, body) => {
         //wiki(logWikiResult, body);
-        getWeather(logResult, 35, 77);
+        upload(logResult);
       });
 };
 const translateToEnglish = (query) => {

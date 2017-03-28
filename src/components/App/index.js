@@ -41,48 +41,48 @@ class App extends Component {
       <div>
         <Jumbotron>
           <Grid>
-            <h1 className="text-center">Sahayak</h1>
+            <h1 className="text-center" >Sahayak</h1>
           </Grid>
         </Jumbotron>
         <Grid>
           <Row className="show-grid">
             <Col xs={6} md={3}>
-              <Panel header={<h3>Your Pincode</h3>} bsStyle="primary">
+              <Panel header={<h3>Your Pincode</h3>} bsStyle="success">
                 <h3>110045</h3>
               </Panel>
               <Button
-                bsStyle="primary" block
+                bsStyle="success" block
                 onClick={this.open2.bind(this)} >
                 World Bank Statistics
               </Button>
             </Col>
             <Col xs={6} md={6}>
               {[1, 2, 3, 4, 5].map((data) => (
-                <Panel header={<h3>sample title</h3>} bsStyle="primary">
+                <Panel header={<h3>sample title</h3>} bsStyle="success">
                   sample content
                 </Panel>
               ))}
             </Col>
             <Col xsHidden md={3}>
               <Button
-                bsStyle="primary"
+                bsStyle="success"
                 onClick={this.open.bind(this)} block>
                 Trade
               </Button>
               <Link to='/agriculture'>
                 <Button
                   id="button-agri"
-                  bsStyle="primary" block>
+                  bsStyle="success" block>
                   Agriculture
                 </Button>
               </Link>
               <Button
-                bsStyle="primary" block
+                bsStyle="success" block
                 onClick={this.open3.bind(this)} >
                 File an RTI
               </Button>
               <Button
-                bsStyle="primary" block>
+                bsStyle="success" block>
                 File a consumer complaint
               </Button>
             </Col>

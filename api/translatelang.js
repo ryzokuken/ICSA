@@ -2,6 +2,7 @@ const translate = require('google-translate-api');
 const request = require('request');
 const wiki = require('./wiki').wikiService
 const pincode = require('./pincode').getPincode
+const getLivestock = require('./livestock').getLivestock
 //log s result from wiki api
 const logResult = (message) => {
   console.log(message);
@@ -15,7 +16,7 @@ const parseText = (rawText) => {
         method: 'GET'
       }, (error, response, body) => {
         //wiki(logWikiResult, body);
-        pincode(logResult);
+        getLivestock(logResult, 'tripura');
       });
 };
 const translateToEnglish = (query) => {

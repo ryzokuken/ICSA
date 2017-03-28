@@ -11,7 +11,6 @@ const getPincode = (callback) => {
   });
 }
 
-module.exports {
-  searchCity
-  getPincode,
+module.exports = {
+  getPincode
 }

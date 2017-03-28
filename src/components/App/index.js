@@ -3,6 +3,8 @@ import { Grid, Jumbotron, Button, Row, Col, Panel, Modal } from 'react-bootstrap
 import { Link } from 'react-router';
 import $ from 'jquery';
 
+// import { translateToEnglish } from '../../../api/translatelang';
+
 import data from './world-bank.png';
 
 import './style.css';
@@ -37,19 +39,18 @@ class App extends Component {
     this.setState({ showModal3: true });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var settings = {
       "async": true,
       "crossDomain": true,
-      "headers": [
-        "Access-Control-Allow-Origin": "*"
-      ],
       "url": "http://localhost:5000/newsfeed",
-      "method": "GET"
+      "method": "GET",
+      "dataType": "json"
     }
 
-    $.ajax(settings).done(function (response) {
-      console.log(response);
+    $.ajax(settings).done((response) => {
+      this.setState({ data: response });
+      console.log("FETCHED DATA");
     });
   }
 
@@ -76,7 +77,14 @@ class App extends Component {
             </Col>
 
             <Col xs={6} md={6}>
-              { JSON.stringify(this.state.data) }
+              { this.state.data.cards && this.state.data.cards.map((item) => (
+                <Panel
+                  header={<h3>{item.Ministry} - {item.Title}</h3>}
+                  bsStyle="primary"
+                  footer={<Button bsStyle="primary" href={item.url} target="_blank">Read More</Button>}>
+                  {item.Subject}
+                </Panel>
+              )) }
             </Col>
 
             <Col xsHidden md={3}>

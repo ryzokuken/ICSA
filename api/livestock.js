@@ -17,8 +17,8 @@ const getLivestock = (callback, query) => {
   }
   request(url, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-      console.log(body);
-      return callback(body);
+      console.log(typeof(JSON.parse(body)));
+      return callback(JSON.parse(body));
     }
   });
 }

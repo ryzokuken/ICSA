@@ -4,7 +4,7 @@ const wiki = require('./wiki').wikiService
 const pincode = require('./pincode').getPincode
 //const getWeather = require('./weather').getWeather
 //log s result from wiki api
-const upload = require('./upload').upload
+const geolocate = require('./geolocation').geoFindMe
 const logResult = (message) => {
   console.log(message);
 }
@@ -17,7 +17,7 @@ const parseText = (rawText) => {
         method: 'GET'
       }, (error, response, body) => {
         //wiki(logWikiResult, body);
-        upload(logResult);
+        geolocate(logResult);
       });
 };
 const translateToEnglish = (query) => {

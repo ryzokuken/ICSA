@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
 
+import './App.css';
+
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id="app-root">
         <Navbar inverse fixedTop>
           <Grid>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="/">React App</a>
+                <a href="/">Sahayak</a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
@@ -17,14 +19,28 @@ class App extends Component {
         </Navbar>
         <Jumbotron>
           <Grid>
-            <h1>Welcome to React</h1>
-            <p>
+            <h1 className="text-center">Sahayak</h1>
+            <p id="buttons">
               <Button
-                bsStyle="success"
+                bsStyle="primary"
                 bsSize="large"
                 href="http://react-bootstrap.github.io/components.html"
                 target="_blank">
-                View React Bootstrap Docs
+                File an RTI
+              </Button>
+              <Button
+                bsStyle="primary"
+                bsSize="large"
+                href="http://react-bootstrap.github.io/components.html"
+                target="_blank">
+                Register an FIR
+              </Button>
+              <Button
+                bsStyle="primary"
+                bsSize="large"
+                href="http://react-bootstrap.github.io/components.html"
+                target="_blank">
+                Register a Consumer Complaint
               </Button>
             </p>
           </Grid>

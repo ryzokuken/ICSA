@@ -1,9 +1,9 @@
 const translate = require('google-translate-api');
 const request = require('request');
 const wiki = require('./wiki').wikiService
-
+const pincode = require('./pincode').getPincode
 //log s result from wiki api
-const logWikiResult = (message) => {
+const logResult = (message) => {
   console.log(message);
 }
 
@@ -14,10 +14,10 @@ const parseText = (rawText) => {
         url: 'http://127.0.0.1:5000/message_parser?query=' + rawText,
         method: 'GET'
       }, (error, response, body) => {
-        wiki(logWikiResult, body);
+        //wiki(logWikiResult, body);
+        pincode(logResult);
       });
 };
-
 const translateToEnglish = (query) => {
   console.log(query);
   translate(query.text, {to: query.translatedLang}).then(res => {
